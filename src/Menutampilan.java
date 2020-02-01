@@ -10,6 +10,7 @@ public class Menutampilan {
     Scanner keyboard = new Scanner(System.in);
     TampilData showdata = new TampilData();
     TambahDataDB addData = new TambahDataDB();
+    HapusData delData = new HapusData();
     
     
     public void MenuUtama(){
@@ -74,7 +75,7 @@ public class Menutampilan {
     public void MenuTambahData(){
         cls.BersihkanConsole();
         System.out.println("=================================================");
-        System.out.println("||          Tambah Data Menu                   ||");
+        System.out.println("||            Tambah Data Menu                 ||");
         System.out.println("=================================================");
         System.out.println("| 1. Tambah Data menu Paket PS                  |");
         System.out.println("| 2. Tambah Data Menu Makanan                   |");
@@ -108,6 +109,7 @@ public class Menutampilan {
         System.out.println("| 1. Hapus Data menu Paket PS                   |");
         System.out.println("| 2. Hapus Data Menu Makanan                    |");
         System.out.println("| 3. Hapus Data Menu Minuman                    |");
+        System.out.println("| 4. Hapus Data Transaksi                       |");
         System.out.println("| 0. Kembali ke Menu Sebelumya                  |");
         System.out.println("-------------------------------------------------");
         System.out.print("| Masukan pilihan anda  :  "); int pilihan = keyboard.nextInt();
@@ -116,10 +118,16 @@ public class Menutampilan {
                 MenuOpsiTambahan();
                 break;
             case 1:
-                /// sambung class 
+                delData.HapusPaketPS();
                 break;
             case 2:
-                // sambung class
+                delData.HapusMenuMakanan();
+                break;
+            case 3:
+                delData.HapusMenuMinuman();
+                break;
+            case 4:
+                delData.HapusTransaksi();
                 break;
             default:
                 System.out.println("Pilihan tidak ada!");   
